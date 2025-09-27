@@ -35,6 +35,7 @@ public class MovieService {
                 .collect(Collectors.toList());
     }
 
+    @Cacheable("movieDetails")
     public MovieDetails getMovieDetails(String movieId) {
         // Implementation to fetch movie details from an external API
         return movieDetailsMapper.toDomain(movieSao.fetchMovieDetails(movieId));
