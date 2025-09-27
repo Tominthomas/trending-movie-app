@@ -22,4 +22,9 @@ public class MovieController {
     public Object getTrending(@PathVariable String period) {
         return movieService.getTrendingMovies(period);
     }
+
+    @GetMapping("/{id}")
+    public Object getMovieDetails(@PathVariable String id) {
+        return movieService.getMovieDetails(id);
+    }
 }

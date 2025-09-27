@@ -2,6 +2,7 @@ package com.github.tominthomas.trending_movie_api.sao;
 
 import org.springframework.stereotype.Service;
 import org.springframework.web.reactive.function.client.WebClient;
+import com.github.tominthomas.trending_movie_api.sao.dto.MovieDetailsDto;
 import com.github.tominthomas.trending_movie_api.sao.dto.TrendingMoviesResponseDto;
 
 import lombok.RequiredArgsConstructor;
@@ -22,5 +23,14 @@ public class MovieSao {
                 .bodyToMono(TrendingMoviesResponseDto.class)
                 .block();
         return responseDto;
+    }
+
+    public MovieDetailsDto fetchMovieDetails(String movieId) {
+        MovieDetailsDto movieDetailsDto = webClient.get()
+                .uri("/movie/{movieId}", movieId)
+                .retrieve()
+                .bodyToMono(MovieDetailsDto.class)
+                .block();
+        return movieDetailsDto;
     }
 }

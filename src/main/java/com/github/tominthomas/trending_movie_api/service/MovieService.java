@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
+import com.github.tominthomas.trending_movie_api.mapper.MovieDetailsMapper;
 import com.github.tominthomas.trending_movie_api.mapper.MovieMapper;
 import com.github.tominthomas.trending_movie_api.model.Movie;
+import com.github.tominthomas.trending_movie_api.model.MovieDetails;
 import com.github.tominthomas.trending_movie_api.sao.MovieSao;
 import lombok.RequiredArgsConstructor;
 
@@ -20,6 +22,8 @@ public class MovieService {
     private final MovieSao movieSao;
     @Autowired
     private final MovieMapper movieMapper;
+    @Autowired
+    private final MovieDetailsMapper movieDetailsMapper;
 
     @Cacheable("trendingMovies")
     public List<Movie> getTrendingMovies(String period) {
@@ -29,5 +33,10 @@ public class MovieService {
                 .stream()
                 .map(movieMapper::toDomain)
                 .collect(Collectors.toList());
+    }
+
+    public MovieDetails getMovieDetails(String movieId) {
+        // Implementation to fetch movie details from an external API
+        return movieDetailsMapper.toDomain(movieSao.fetchMovieDetails(movieId));
     }
 }
