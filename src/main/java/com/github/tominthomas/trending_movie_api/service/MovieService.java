@@ -4,6 +4,7 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import com.github.tominthomas.trending_movie_api.mapper.MovieMapper;
@@ -20,6 +21,7 @@ public class MovieService {
     @Autowired
     private final MovieMapper movieMapper;
 
+    @Cacheable("trendingMovies")
     public List<Movie> getTrendingMovies(String period) {
         // Implementation to fetch trending movies from an external API
         return movieSao.fetchTrending(period)
