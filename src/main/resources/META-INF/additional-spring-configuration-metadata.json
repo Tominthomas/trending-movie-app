@@ -1,0 +1,12 @@
+{"properties": [
+  {
+    "name": "tmdb.api.base-url",
+    "type": "java.lang.String",
+    "description": "Base URL for TMDB API"
+  },
+  {
+    "name": "tmdb.api.token",
+    "type": "java.lang.String",
+    "description": "Bearer Token for TMDB API"
+  }
+]}
