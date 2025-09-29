@@ -58,7 +58,6 @@ npm start
 
 Open **two seperate terminals** and run the above steps in each:
 
-1. 
 
 Then open [http://localhost:3000](http://localhost:3000) 🎉
 
