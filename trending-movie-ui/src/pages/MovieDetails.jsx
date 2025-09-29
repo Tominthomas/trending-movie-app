@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { useParams, useNavigate } from "react-router-dom";
+import { useParams, useNavigate } from "react-router";
 import { fetchMovieDetails } from "../api/movieApi";
 import { Typography, Container, Button, Box } from "@mui/material";
 

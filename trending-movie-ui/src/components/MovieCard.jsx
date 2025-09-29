@@ -6,7 +6,7 @@ import {
   IconButton,
 } from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
-import { useNavigate } from "react-router-dom";
+import { useNavigate } from "react-router";
 import { useFavorites } from "../hooks/FavoritesContext";
 
 const MovieCard = ({ movie }) => {
