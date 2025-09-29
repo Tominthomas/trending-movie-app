@@ -3,7 +3,7 @@
 
 A full-stack application that shows trending movies with details and favorites functionality.  
 - **Backend**: Spring Boot (Java 21, Maven)  
-- **Frontend**: React (Create React App, Material UI)  
+- **Frontend**: React (JavaScript, Material UI)  
 
 ---
 
@@ -31,14 +31,36 @@ Make sure you have installed:
 
 ### 2. Backend Setup (Spring Boot API)
 
-```bash
+This project requires a TMDB API token to fetch movie data. You need to set it as an environment variable before starting the backend.
+You can visit this site to get setup with a free account - [TDMB API Token](https://developer.themoviedb.org/docs/getting-started)  
+
+1. Set your TMDB API token
+
+* Open a terminal in the `trending-movie-api` folder and run:
+
+```
+export TMDB_API_TOKEN=your_api_token_here 
+
+```
+
+2. Verify the variable is set
+
+```
+echo $TMDB_API_TOKEN  
+```
+* You should see your token printed.
+
+3. Run the backend
+mvn spring-boot:run
+
+```
 cd trending-movie-api
 mvn clean install
 mvn spring-boot:run
 ````
 
 * The backend runs on **[http://localhost:8080](http://localhost:8080)**
-* Make sure you have your API token is added in  `trending-movie-apiapplication.properties`.
+* You can also manually add your API token in  `trending-movie-api.application.properties`.
 
 ---
 
