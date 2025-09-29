@@ -1,6 +1,6 @@
 import axios from "axios";
 
-const API_BASE_URL = "http://localhost:8080/api/movies"; // adjust if needed
+const API_BASE_URL = "http://localhost:8080/api/movies"; // Local Spring Boot endpoint
 
 export const fetchTrendingMovies = async (timeWindow) => {
   try {

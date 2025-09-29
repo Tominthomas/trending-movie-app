@@ -1,4 +1,10 @@
-import { Card, CardMedia, CardContent, Typography, IconButton } from "@mui/material";
+import {
+  Card,
+  CardMedia,
+  CardContent,
+  Typography,
+  IconButton,
+} from "@mui/material";
 import { Favorite, FavoriteBorder } from "@mui/icons-material";
 import { useNavigate } from "react-router-dom";
 import { useFavorites } from "../hooks/FavoritesContext";
