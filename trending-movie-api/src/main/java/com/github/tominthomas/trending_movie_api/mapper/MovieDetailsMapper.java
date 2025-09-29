@@ -11,7 +11,7 @@ import com.github.tominthomas.trending_movie_api.sao.dto.MovieDetailsDto;
 
 @Mapper(componentModel = "spring")
 public interface MovieDetailsMapper {
-    @Mapping(target = "genres", source = "genres") // MapStruct will need a helper method
+    @Mapping(target = "genres", source = "genres")
     @Mapping(target = "posterUrl", expression = "java(\"https://image.tmdb.org/t/p/w500\" + dto.getPosterPath())")
     MovieDetails toDomain(MovieDetailsDto dto);
 
