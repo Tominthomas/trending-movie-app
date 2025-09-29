@@ -1,13 +1,23 @@
-import axios from 'axios';
+import axios from "axios";
 
-const API_BASE = 'http://localhost:8080/api'; // your Spring Boot backend
+const API_BASE_URL = "http://localhost:8080/api/movies"; // adjust if needed
 
-export const fetchTrendingMovies = async () => {
-  const response = await axios.get(`${API_BASE}/movies/trending/day`);
-  return response.data;
+export const fetchTrendingMovies = async (timeWindow) => {
+  try {
+    const response = await axios.get(`${API_BASE_URL}/trending/${timeWindow}`);
+    return response.data;
+  } catch (error) {
+    console.error("Error fetching trending movies:", error);
+    throw new Error("Failed to load trending movies. Please try again.");
+  }
 };
 
 export const fetchMovieDetails = async (id) => {
-  const response = await axios.get(`${API_BASE}/movies/${id}`);
-  return response.data;
+  try {
+    const response = await axios.get(`${API_BASE_URL}/${id}`);
+    return response.data;
+  } catch (error) {
+    console.error(`Error fetching movie ${id}:`, error);
+    throw new Error("Failed to load movie details.");
+  }
 };
