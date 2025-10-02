@@ -107,6 +107,6 @@ npm test
 
 * Favorites are stored in **sessionStorage**.
 * Backend uses **MapStruct + Lombok** (generated classes are handled by Maven).
-*Backend implements Caffeine caching to increase performance and reduce duplicate calls to the TMDB API.
+* Backend implements Caffeine caching to increase performance and reduce duplicate calls to the TMDB API.
 * Frontend uses **Material UI (MUI)** for styling.
 
